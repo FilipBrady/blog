@@ -1,38 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100;16..144,200;16..144,300;16..144,400;16..144,500;16..144,600;16..144,700&display=swap');
+
+:root {
+  --white-theme-black: #1B1C1E;
+  --blog-fontfamily: 'Montagu Slab', serif;
+  --black-theme-white: #fff
+}
+
 .App {
   text-align: center;
+  color: var(--white-theme-black);
+  font-family: var(--blog-fontfamily);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BlogPostThumnbail a {
+  text-decoration: none;
+  color: var(--white-theme-black);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.navigationLink {
+  color: var(--black-theme-white);
+  text-decoration: none;
+  font-family: var(--blog-fontfamily);
+  font-size: .6rem;
+  font-weight: 500;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 4px;
+} 
