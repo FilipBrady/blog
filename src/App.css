@@ -17,6 +17,10 @@
   color: var(--white-theme-black);
 }
 
+.BlogPostThumnbail {
+  margin: 0 10px;
+}
+
 .navigationLink {
   color: var(--black-theme-white);
   text-decoration: none;
@@ -26,4 +30,4 @@
   float: left;
   margin-top: 5px;
   margin-bottom: 4px;
-} 
+}
