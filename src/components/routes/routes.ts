@@ -1,5 +1,6 @@
 export const route = {
   home: "/home",
   post: "/post",
-  contact: "/contact"
+  contact: "/contact",
+  addBlogPost: "/addBlogPost"
 }

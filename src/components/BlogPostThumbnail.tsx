@@ -8,27 +8,47 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import traktor from '../Images/traktor.jpg';
+import { useAppContainer } from './Context';
 import { route } from './routes/routes';
 
-const BlogPostThumbnail = () => {
+type Props = {
+  blogPost: {
+    id: number;
+    thumbnail: {
+      photo: any;
+      ThumbHeading: string;
+      ThumbDescription: string;
+      ThumbLink: string;
+    };
+    blogPost: {
+      postHeading: string;
+      postText1: string;
+      postPhoto1: any;
+      postPhotoDescription1: string;
+      postText2: string;
+      postText3: string;
+    };
+  };
+};
+
+const BlogPostThumbnail = ({blogPost}: Props) => {
   return (
     <div className='BlogPostThumnbail'>
       <Card sx={{ maxWidth: 300, marginY: 3 }}>
-        <Link to={route.post}>
+        <Link to={`${route.post}/${blogPost.thumbnail.ThumbLink}`}>
           <CardActionArea>
             <CardMedia
               component='img'
               height='160'
-              image={traktor}
-              alt='Big Blue Traktor'
+              image={blogPost.thumbnail.photo}
+              alt={blogPost.blogPost.postPhotoDescription1}
             />
             <CardContent>
               <Typography gutterBottom variant='h6' component='div'>
-                Is Tractor beter vehicle to a city than a car?
+                {blogPost.thumbnail.ThumbHeading}
               </Typography>
               <Typography variant='body2' color='text.secondary'>
-                Is Tractor beter vehicle to a city than a car? We have the
-                answer for this interesting question.
+               {blogPost.thumbnail.ThumbDescription}
               </Typography>
             </CardContent>
           </CardActionArea>

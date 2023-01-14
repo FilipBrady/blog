@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import AddNewBlogPost from '../pages/AddNewBlogPost';
 import BlogMainSite from '../pages/BlogMainSite';
 import BlogPost from '../pages/BlogPost';
+import BlogPostList from '../pages/BlogPostList';
 import { route } from './routes/routes';
 
 const RouterComponent = () => {
@@ -8,7 +10,10 @@ const RouterComponent = () => {
     <div>
       <Routes>
         <Route path={route.home} element={<BlogMainSite />} />
-        <Route path={`${route.post}`} element={<BlogPost />} />
+        {/* <Route path={`${route.post}`} element={<BlogPost />} /> */}
+        <Route path={`${route.post}`} element={<BlogPostList />} />
+        <Route path={`${route.post}/:id`} element={<BlogPost />} />
+        <Route path={route.addBlogPost} element={<AddNewBlogPost />} />
       </Routes>
     </div>
   );
