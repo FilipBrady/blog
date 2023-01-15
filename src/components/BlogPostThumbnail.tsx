@@ -34,7 +34,7 @@ type Props = {
 const BlogPostThumbnail = ({blogPost}: Props) => {
   return (
     <div className='BlogPostThumnbail'>
-      <Card sx={{ maxWidth: 300, marginY: 3 }}>
+      <Card sx={{width: 300, maxWidth: 300 ,marginY: 3 }}>
         <Link to={`${route.post}/${blogPost.thumbnail.ThumbLink}`}>
           <CardActionArea>
             <CardMedia

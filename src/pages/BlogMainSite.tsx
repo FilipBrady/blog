@@ -1,11 +1,13 @@
 import { Typography } from '@mui/material';
 import { Container } from '@mui/system';
+import AdvertisingPlace from '../components/AdvertisingPlace';
 import { BlogPosts } from '../components/BlogPosts';
 import BlogPostThumbnail from '../components/BlogPostThumbnail';
 import { useAppContainer } from '../components/Context';
+import SuggestedPosts from '../components/SuggestedPosts';
 import car from '../Images/car.jpg';
 const BlogMainSite = () => {
-  const { posts } = useAppContainer()
+  const { posts } = useAppContainer();
 
   return (
     <div>
@@ -31,16 +33,18 @@ const BlogMainSite = () => {
         Welcome to my Blog about Cars (As you can see)
       </Typography>
       <Container
-        maxWidth='md'
+        maxWidth='lg'
         sx={{
           display: 'flex',
           justifyContent: 'center',
           alignContent: 'baseline',
+          flexWrap: 'wrap',
         }}
       >
         {posts.map(blogPost => (
           <BlogPostThumbnail key={blogPost.id} blogPost={blogPost} />
         ))}
+        {/* <SuggestedPosts /> */}
       </Container>
     </div>
   );
