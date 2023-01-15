@@ -23,13 +23,13 @@ export const BlogPosts = [
     id: 2,
     thumbnail: {
       photo: require('../Images/car.jpg'),
-      ThumbHeading: 'Are a fast cars really that fast?',
+      ThumbHeading: 'Are fast cars really that fast?',
       ThumbDescription:
         'Are a fast cars really that fast or is it just an illusion? We will find out',
       ThumbLink: 'fastCar',
     },
     blogPost: {
-      postHeading: 'Are a fast cars really that fast?',
+      postHeading: 'Are fast cars really that fast?',
       postText1:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates deserunt explicabo dolorem exercitationem, eveniet quod. Est reprehenderit quasi explicabo harum accusamus vel veniam laudantium iure odit, quia cupiditate ex qui? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quisquam suscipit error rem distinctio debitis eveniet est facilis cumque, nam ipsa cupiditate eius natus dignissimos, blanditiis nostrum amet nulla accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quisquam aspernatur distinctio officia error aliquam odit facere blanditiis, pariatur reprehenderit, veritatis consectetur optio modi sunt debitis eveniet aperiam quia quam?',
       postPhoto1: require('../Images/car.jpg'),

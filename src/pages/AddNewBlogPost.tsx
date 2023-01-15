@@ -12,7 +12,8 @@ const AddNewBlogPost = () => {
   const [postText1, setPostText1] = useState('');
   const [postText2, setPostText2] = useState('');
   const [postText3, setPostText3] = useState('');
-  const [newImage, setNewImage] = useState('../Images/car.jpg');
+  const [newFile, setNewFile] = useState('');
+  const [photoDescription, setPhotoDescription] = useState('');
 
   const handleNewHeading = (heading: string) => {
     setNewHeading(heading);
@@ -33,18 +34,25 @@ const AddNewBlogPost = () => {
     setPostText3(postText3);
   };
 
+  const handleFileUpload = (e: any) => {
+    console.log(e.target.files);
+    setNewFile(URL.createObjectURL(e.target.files[0]));
+  };
+  const handlePhotoDescription = (photoDescription: string) => {
+    setPhotoDescription(photoDescription)
+  }
 
   const handleSubmiting = (formSubmit: any) => {
     formSubmit.preventDefault();
     onAddNewPost(
-      newImage,
+      newFile,
       newHeading,
       newDescription,
       keyword,
       newHeading,
       postText1,
-      newImage,
-      'fotka nie je',
+      newFile,
+      photoDescription,
       postText2,
       postText3
     );
@@ -95,8 +103,21 @@ const AddNewBlogPost = () => {
                   }
                 />
               </Box>
-              <Box sx={{ marginY: 3 }}>
-                <TextField type='file' variant='standard' />
+              <Box sx={{ marginY: 3, alignItems: "baseline" }}>
+                <TextField
+                  type='file'
+                  variant='standard'
+                  onChange={handleFileUpload}
+                />
+                <TextField
+                  sx={{ marginX: 1 }}
+                  variant='standard'
+                  type='text'
+                  label='Photo description'
+                  onChange={photoDescription =>
+                    handlePhotoDescription(photoDescription.target.value)
+                  }
+                />
               </Box>
             </Box>
             <TextField
