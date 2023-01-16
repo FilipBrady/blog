@@ -57,5 +57,14 @@ export const BlogPosts = [
       postText3:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam.',
     },
+    comment:[
+      {
+      name: "Car owner 1",
+      commentText: "I love cars but this is not a car....this is a beast"
+    },{
+      name: "Bob",
+      commentText: "I do not like cars, BLEH"
+    }
+    ]
   }
 ];
