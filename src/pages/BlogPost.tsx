@@ -1,11 +1,9 @@
 import { Box, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AdvertisingPlace from '../components/AdvertisingPlace';
-import { BlogPosts } from '../components/BlogPosts';
 import { useAppContainer } from '../components/Context';
 import SuggestedPosts from '../components/SuggestedPosts';
-import traktor from '../Images/traktor.jpg';
 
 const BlogPost = () => {
   const { id } = useParams();

@@ -39,8 +39,8 @@ const AddNewBlogPost = () => {
     setNewFile(URL.createObjectURL(e.target.files[0]));
   };
   const handlePhotoDescription = (photoDescription: string) => {
-    setPhotoDescription(photoDescription)
-  }
+    setPhotoDescription(photoDescription);
+  };
 
   const handleSubmiting = (formSubmit: any) => {
     formSubmit.preventDefault();
@@ -59,6 +59,8 @@ const AddNewBlogPost = () => {
     setNewHeading('');
     setNewDescription('');
     setKeyword('');
+    setNewFile('');
+    setPhotoDescription('');
     setPostText1('');
     setPostText2('');
     setPostText3('');
@@ -84,6 +86,7 @@ const AddNewBlogPost = () => {
                   variant='standard'
                   type='text'
                   label='Post Heading'
+                  value={newHeading}
                   onChange={heading => handleNewHeading(heading.target.value)}
                 />
                 <TextField
@@ -91,6 +94,7 @@ const AddNewBlogPost = () => {
                   variant='standard'
                   type='text'
                   label='keyword'
+                  value={keyword}
                   onChange={keyword => handleNewKeywork(keyword.target.value)}
                 />
                 <TextField
@@ -98,15 +102,17 @@ const AddNewBlogPost = () => {
                   variant='standard'
                   type='text'
                   label='Post description'
+                  value={newDescription}
                   onChange={description =>
                     handleNewDescription(description.target.value)
                   }
                 />
               </Box>
-              <Box sx={{ marginY: 3, alignItems: "baseline" }}>
+              <Box sx={{ marginY: 3, alignItems: 'baseline' }}>
                 <TextField
                   type='file'
                   variant='standard'
+                  // value={newFile}
                   onChange={handleFileUpload}
                 />
                 <TextField
@@ -114,6 +120,7 @@ const AddNewBlogPost = () => {
                   variant='standard'
                   type='text'
                   label='Photo description'
+                  value={photoDescription}
                   onChange={photoDescription =>
                     handlePhotoDescription(photoDescription.target.value)
                   }
@@ -127,6 +134,7 @@ const AddNewBlogPost = () => {
               multiline
               rows={4}
               fullWidth
+              value={postText1}
               onChange={postText1 => handleNewPostText1(postText1.target.value)}
             />
             <TextField
@@ -136,6 +144,7 @@ const AddNewBlogPost = () => {
               multiline
               rows={4}
               fullWidth
+              value={postText2}
               onChange={postText2 => handleNewPostText2(postText2.target.value)}
             />
             <TextField
@@ -145,6 +154,7 @@ const AddNewBlogPost = () => {
               multiline
               rows={4}
               fullWidth
+              value={postText3}
               onChange={postText3 => handleNewPostText3(postText3.target.value)}
             />
             <TextField
