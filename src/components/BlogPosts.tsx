@@ -38,5 +38,24 @@ export const BlogPosts = [
       postText3:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam.',
     },
-  },
+  }, {
+    id: 3,
+    thumbnail: {
+      photo: require('../Images/flying-car.jpg'),
+      ThumbHeading: 'Is this really necessary?',
+      ThumbDescription:
+        'Are flying cars really that necessary or are thay just useles?',
+      ThumbLink: 'flyingCars',
+    },
+    blogPost: {
+      postHeading: 'Are flying cars really that necessary or are thay just useles?',
+      postText1:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates deserunt explicabo dolorem exercitationem, eveniet quod. Est reprehenderit quasi explicabo harum accusamus vel veniam laudantium iure odit, quia cupiditate ex qui? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quisquam suscipit error rem distinctio debitis eveniet est facilis cumque, nam ipsa cupiditate eius natus dignissimos, blanditiis nostrum amet nulla accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quisquam aspernatur distinctio officia error aliquam odit facere blanditiis, pariatur reprehenderit, veritatis consectetur optio modi sunt debitis eveniet aperiam quia quam? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates deserunt explicabo dolorem exercitationem, eveniet quod. Est reprehenderit quasi explicabo harum accusamus vel veniam laudantium iure odit, quia cupiditate ex qui? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quisquam suscipit error rem distinctio debitis eveniet est facilis cumque, nam ipsa cupiditate eius natus dignissimos, blanditiis nostrum amet nulla accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quisquam aspernatur distinctio officia error aliquam odit facere blanditiis, pariatur reprehenderit, veritatis consectetur optio modi sunt debitis eveniet aperiam quia quam?',
+      postPhoto1: require('../Images/flying-car.jpg'),
+      postPhotoDescription1: 'Wow that car is flying LOL',
+      postText2: 'Is the car really flying?',
+      postText3:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam.',
+    },
+  }
 ];

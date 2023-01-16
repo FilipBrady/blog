@@ -39,8 +39,10 @@
   padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  background-color: #ededed;
   justify-content: space-around;
+  min-height: calc(100vh - 68px);
+  background-color: #ededed;
+  word-break: break-word;
 }
 .ArticleBox {
   background-color: #fff;

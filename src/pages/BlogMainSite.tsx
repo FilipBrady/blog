@@ -1,10 +1,7 @@
 import { Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import AdvertisingPlace from '../components/AdvertisingPlace';
-import { BlogPosts } from '../components/BlogPosts';
 import BlogPostThumbnail from '../components/BlogPostThumbnail';
 import { useAppContainer } from '../components/Context';
-import SuggestedPosts from '../components/SuggestedPosts';
 import car from '../Images/car.jpg';
 const BlogMainSite = () => {
   const { posts } = useAppContainer();
