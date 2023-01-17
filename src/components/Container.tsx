@@ -2,7 +2,7 @@ import { Provider } from './Context';
 // import { BlogPosts } from './BlogPosts';
 import { BlogPostTypes } from './BlogPostType';
 import { useState } from 'react';
-import  { BlogPosts }  from './BlogPosts'
+import { BlogPosts } from './BlogPosts';
 
 export type AppState = {
   posts: BlogPostTypes;
@@ -17,6 +17,11 @@ export type AppState = {
     postPhotoDescription1: string,
     postText2: string,
     postText3: string
+  ) => void;
+  onAddComment: (
+    postId: string,
+    newName: string,
+    newCommentText: string
   ) => void;
 };
 
@@ -60,9 +65,48 @@ const Container = ({ children }: Props) => {
     ]);
   };
 
+  const handleCommentAdd = (
+    postId: string,
+    newName: string,
+    newCommentText: string
+  ) => {
+    console.log(postId);
+    console.log(newName);
+    console.log(newCommentText);
+
+    setBlogPost(prevPosts =>
+      prevPosts.map(blogPost => {
+        if (blogPost.thumbnail.ThumbLink === postId) {
+          let newId = 0;
+          if (blogPost.comment?.length === undefined) {
+            newId = 0;
+          } else {
+            newId = blogPost.comment.length;
+          }
+          const newComment = {
+            id: newId + 1,
+            name: newName,
+            commentText: newCommentText,
+          };
+          // console.log(newComment);
+          blogPost.comment?.map(comments => {
+            console.log(comments);
+            return (
+             { ...comments,
+              newComment}
+            )
+          });
+        }
+
+        return blogPost;
+      })
+    );
+  };
+
   const appState: AppState = {
     posts: BlogPost,
     onAddNewPost: handleAddBlogPost,
+    onAddComment: handleCommentAdd,
   };
 
   return <Provider value={appState}>{children(appState)}</Provider>;

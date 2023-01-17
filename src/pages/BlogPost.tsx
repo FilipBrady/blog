@@ -12,21 +12,21 @@ const BlogPost = () => {
 
   return (
     <Box>
-      <Box>
+      {/* <Box>
         {posts.map(blogPost => (
           <CommentSection blogPost={blogPost} />
         ))}
-        {/* {posts.map(blogPosts => {
-          blogPosts.blogPost.comment.map(postComments => (
-            <CommentSection postComments={postComments} />
-          ))
-        })} */}
-      </Box>
+      </Box> */}
       <Box className='SitePostBox'>
         {posts.map(blogPost => {
           if (id === blogPost.thumbnail.ThumbLink) {
             return (
               <Box className='ArticleBox'>
+                <Container>
+                  <Box>
+                    <CommentSection blogPost={blogPost} />
+                  </Box>
+                </Container>
                 <Container maxWidth='sm'>
                   <Typography variant='h5' color='initial'>
                     {' '}

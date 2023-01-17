@@ -38,7 +38,8 @@ export const BlogPosts = [
       postText3:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam.',
     },
-  }, {
+  },
+  {
     id: 3,
     thumbnail: {
       photo: require('../Images/flying-car.jpg'),
@@ -48,7 +49,8 @@ export const BlogPosts = [
       ThumbLink: 'flyingCars',
     },
     blogPost: {
-      postHeading: 'Are flying cars really that necessary or are thay just useles?',
+      postHeading:
+        'Are flying cars really that necessary or are thay just useles?',
       postText1:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates deserunt explicabo dolorem exercitationem, eveniet quod. Est reprehenderit quasi explicabo harum accusamus vel veniam laudantium iure odit, quia cupiditate ex qui? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quisquam suscipit error rem distinctio debitis eveniet est facilis cumque, nam ipsa cupiditate eius natus dignissimos, blanditiis nostrum amet nulla accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quisquam aspernatur distinctio officia error aliquam odit facere blanditiis, pariatur reprehenderit, veritatis consectetur optio modi sunt debitis eveniet aperiam quia quam? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates deserunt explicabo dolorem exercitationem, eveniet quod. Est reprehenderit quasi explicabo harum accusamus vel veniam laudantium iure odit, quia cupiditate ex qui? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quisquam suscipit error rem distinctio debitis eveniet est facilis cumque, nam ipsa cupiditate eius natus dignissimos, blanditiis nostrum amet nulla accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quisquam aspernatur distinctio officia error aliquam odit facere blanditiis, pariatur reprehenderit, veritatis consectetur optio modi sunt debitis eveniet aperiam quia quam?',
       postPhoto1: require('../Images/flying-car.jpg'),
@@ -57,14 +59,17 @@ export const BlogPosts = [
       postText3:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla numqu Atque commodi, hic rem delectus culpa, ad alias excepturi eius accusamus totam assumsimus quae soluta nulla tempora.Consequatur incidunt amet dolore laudantium assumenda, ratione posni asperiores archt officiis aperiam.',
     },
-    comment:[
+    comment: [
       {
-      name: "Car owner 1",
-      commentText: "I love cars but this is not a car....this is a beast"
-    },{
-      name: "Bob",
-      commentText: "I do not like cars, BLEH"
-    }
-    ]
-  }
+        id: 1,
+        name: 'Car owner 1',
+        commentText: 'I love cars but this is not a car....this is a beast',
+      },
+      {
+        id: 2,
+        name: 'Bob',
+        commentText: 'I do not like cars, BLEH',
+      },
+    ],
+  },
 ];
