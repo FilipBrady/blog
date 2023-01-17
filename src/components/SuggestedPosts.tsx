@@ -10,7 +10,7 @@ type Props = {
 const SuggestedPosts = ({ id }: Props) => {
   const { posts } = useAppContainer();
 
-  console.log(id);
+  // console.log(id);
 
   return (
     <Box sx={{ marginTop: 2, marginBottom: 3, margin: "auto", position: "sticky", top: "50px" }}>

@@ -35,7 +35,7 @@ const AddNewBlogPost = () => {
   };
 
   const handleFileUpload = (e: any) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     setNewFile(URL.createObjectURL(e.target.files[0]));
   };
   const handlePhotoDescription = (photoDescription: string) => {

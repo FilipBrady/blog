@@ -8,19 +8,29 @@ type Props = {
 };
 
 const CommentSection = ({ blogPost }: Props) => {
-  const {onAddComment} = useAppContainer()
-  const [newName, setNewName] = useState("")
-  const [newCommentText, setNewCommentText] = useState("")
+  const { onAddComment } = useAppContainer();
+  const [newName, setNewName] = useState('');
+  const [newCommentText, setNewCommentText] = useState('');
   const handleNewName = (newName: string) => {
-    setNewName(newName)
-  }
+    setNewName(newName);
+  };
   const handleNewCommentText = (newCommentText: string) => {
-    setNewCommentText(newCommentText)
-  }
+    setNewCommentText(newCommentText);
+  };
 
   const handleSubmitClick = () => {
-    onAddComment(blogPost.thumbnail.ThumbLink ,newName, newCommentText)
-  }
+    if (newName.length === 0 && newCommentText.length === 0) {
+      alert('Add your Name and your Comment');
+    } else if (newCommentText.length === 0) {
+      alert('Add your comment');
+    } else if (newName.length === 0) {
+      alert('Add your Name');
+    } else {
+      onAddComment(blogPost.thumbnail.ThumbLink, newName, newCommentText);
+      setNewCommentText('');
+      setNewName('');
+    }
+  };
 
   return (
     <Box
@@ -29,13 +39,14 @@ const CommentSection = ({ blogPost }: Props) => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         // alignItems: 'center',
+        padding: 2
       }}
     >
       <Box sx={{ padding: '5px 15px', textAlign: 'left' }}>
         <Typography variant='h6'>Comments</Typography>
 
-        {blogPost.comment?.length !== undefined ? (
-          blogPost.comment?.map(postComment => {
+        {blogPost.comments?.length !== undefined ? (
+          blogPost.comments?.map(postComment => {
             return (
               <Box sx={{ textAlign: 'left' }}>
                 <Typography variant='body1' sx={{ fontWeight: 800 }}>
@@ -62,7 +73,13 @@ const CommentSection = ({ blogPost }: Props) => {
         }}
       >
         <Typography variant='body1'>Add Comment</Typography>
-        <TextField variant='standard' type='text' label='Your Name' value={newName} onChange={newName => handleNewName(newName.target.value)} />
+        <TextField
+          variant='standard'
+          type='text'
+          label='Your Name'
+          value={newName}
+          onChange={newName => handleNewName(newName.target.value)}
+        />
         <TextField
           variant='standard'
           type='text'
@@ -70,7 +87,9 @@ const CommentSection = ({ blogPost }: Props) => {
           rows={3}
           label='Your Comment'
           value={newCommentText}
-          onChange={newCommentText => handleNewCommentText(newCommentText.target.value)}
+          onChange={newCommentText =>
+            handleNewCommentText(newCommentText.target.value)
+          }
         />
         <Button
           variant='outlined'
