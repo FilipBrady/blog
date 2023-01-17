@@ -22,11 +22,7 @@ const BlogPost = () => {
           if (id === blogPost.thumbnail.ThumbLink) {
             return (
               <Box className='ArticleBox'>
-                <Container>
-                  <Box>
-                    <CommentSection blogPost={blogPost} />
-                  </Box>
-                </Container>
+                <Container></Container>
                 <Container maxWidth='sm'>
                   <Typography variant='h5' color='initial'>
                     {' '}
@@ -66,6 +62,9 @@ const BlogPost = () => {
                     </Typography>
                   </Box>
                 </Container>
+                <Box>
+                  <CommentSection blogPost={blogPost} />
+                </Box>
               </Box>
             );
           }

@@ -70,37 +70,55 @@ const Container = ({ children }: Props) => {
     newName: string,
     newCommentText: string
   ) => {
-    console.log(postId);
-    console.log(newName);
-    console.log(newCommentText);
+    // setBlogPost(prevPosts =>
+    //   prevPosts.map(blogPost => {
+    //     if (blogPost.thumbnail.ThumbLink === postId) {
+    //       let newId = 0;
+    //       if (blogPost.comment?.length === undefined) {
+    //         newId = 0;
+    //       } else {
+    //         newId = blogPost.comment.length;
+    //       }
+    //       const newComment = {
+    //         id: newId + 1,
+    //         name: newName,
+    //         commentText: newCommentText,
+    //       };
+    //       // console.log(newComment);
+    //       blogPost.comment?.map(comments => {
+    //         console.log(comments);
+    //         return (
+    //          { ...comments,
+    //           newComment}
+    //         )
+    //       });
+    //     }
 
-    setBlogPost(prevPosts =>
-      prevPosts.map(blogPost => {
-        if (blogPost.thumbnail.ThumbLink === postId) {
-          let newId = 0;
-          if (blogPost.comment?.length === undefined) {
+    //     return blogPost;
+    //   })
+    // );
+    setBlogPost(prevBlogPosts => prevBlogPosts.map(blogPost => {
+      if(blogPost.thumbnail.ThumbLink === postId) {
+        let newId = 0;
+          if (blogPost.comments?.length === undefined) {
             newId = 0;
           } else {
-            newId = blogPost.comment.length;
+            newId = blogPost.comments.length;
           }
           const newComment = {
             id: newId + 1,
             name: newName,
             commentText: newCommentText,
           };
-          // console.log(newComment);
-          blogPost.comment?.map(comments => {
-            console.log(comments);
-            return (
-             { ...comments,
-              newComment}
-            )
-          });
-        }
-
-        return blogPost;
-      })
-    );
+          if (!blogPost.comments) {
+            blogPost.comments = [newComment];
+          } else {
+            blogPost.comments = [...blogPost.comments, newComment];
+          }
+      }
+      return blogPost
+    }))  
+    
   };
 
   const appState: AppState = {

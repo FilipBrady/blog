@@ -14,7 +14,7 @@ export type BlogPostType = {
     postText2: string;
     postText3: string;
   };
-  comment?: {id: number, name: string; commentText: string }[];
+  comments?: {id: number, name: string; commentText: string }[];
 };
 
 export type BlogPostTypes = BlogPostType[];
