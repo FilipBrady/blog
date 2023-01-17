@@ -13,11 +13,8 @@ export type BlogPostType = {
     postPhotoDescription1: string;
     postText2: string;
     postText3: string;
-    comment?:[
-      {name: string,
-      commentText: string}
-    ]
   };
+  comment?: {id: number, name: string; commentText: string }[];
 };
 
 export type BlogPostTypes = BlogPostType[];
