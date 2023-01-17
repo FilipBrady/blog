@@ -30,11 +30,11 @@ const SuggestedPosts = ({ id }: Props) => {
                   color='initial'
                   sx={{ textDecoration: 'underline', fontWeight: '600' }}
                 >
-                  {post.thumbnail.ThumbHeading}
+                  {post.thumbnail.ThumbHeading.substring(30, post.thumbnail.ThumbDescription.indexOf("\n"))}
                 </Typography>
 
-                <Typography variant='caption' color='initial'>
-                  {post.thumbnail.ThumbDescription}
+                <Typography variant='caption' color='initial' sx={{wordBreak: "break-word"}}>
+                  {post.thumbnail.ThumbDescription.substring(150, post.thumbnail.ThumbDescription.indexOf("\n"))}
                 </Typography>
               </Box>
             </Link>
