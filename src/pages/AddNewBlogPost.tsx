@@ -2,7 +2,9 @@ import { Box, TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/system';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppContainer } from '../components/Context';
+import { route } from '../components/routes/routes';
 
 const AddNewBlogPost = () => {
   const { onAddNewPost } = useAppContainer();
@@ -14,6 +16,7 @@ const AddNewBlogPost = () => {
   const [postText3, setPostText3] = useState('');
   const [newFile, setNewFile] = useState('');
   const [photoDescription, setPhotoDescription] = useState('');
+  const navigate = useNavigate()
 
   const handleNewHeading = (heading: string) => {
     setNewHeading(heading);
@@ -44,6 +47,7 @@ const AddNewBlogPost = () => {
 
   const handleSubmiting = (formSubmit: any) => {
     formSubmit.preventDefault();
+    
     onAddNewPost(
       newFile,
       newHeading,
@@ -64,6 +68,7 @@ const AddNewBlogPost = () => {
     setPostText1('');
     setPostText2('');
     setPostText3('');
+    navigate(`${route.post}/${keyword}`)
   };
 
   return (
@@ -81,27 +86,30 @@ const AddNewBlogPost = () => {
           >
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box>
-                <TextField
+                <TextField required
                   sx={{ marginX: 1 }}
+                  inputProps={{ maxLength: 100 }}
                   variant='standard'
                   type='text'
-                  label='Post Heading'
+                  label='Post Heading (Max 100 letters)'
                   value={newHeading}
                   onChange={heading => handleNewHeading(heading.target.value)}
                 />
-                <TextField
+                <TextField required
                   sx={{ marginX: 1 }}
+                  inputProps={{ maxLength: 30 }}
                   variant='standard'
                   type='text'
-                  label='keyword'
+                  label='keyword (Max 30 letters)'
                   value={keyword}
                   onChange={keyword => handleNewKeywork(keyword.target.value)}
                 />
-                <TextField
+                <TextField required
                   sx={{ marginX: 1 }}
+                  inputProps={{ maxLength: 150 }}
                   variant='standard'
                   type='text'
-                  label='Post description'
+                  label='Post description (Max 150 letters)'
                   value={newDescription}
                   onChange={description =>
                     handleNewDescription(description.target.value)
@@ -109,13 +117,13 @@ const AddNewBlogPost = () => {
                 />
               </Box>
               <Box sx={{ marginY: 3, alignItems: 'baseline' }}>
-                <TextField
+                <TextField required
                   type='file'
                   variant='standard'
                   // value={newFile}
                   onChange={handleFileUpload}
                 />
-                <TextField
+                <TextField required
                   sx={{ marginX: 1 }}
                   variant='standard'
                   type='text'
@@ -127,7 +135,7 @@ const AddNewBlogPost = () => {
                 />
               </Box>
             </Box>
-            <TextField
+            <TextField required
               variant='standard'
               type='textarea'
               label='Post text (1st)'
@@ -137,7 +145,7 @@ const AddNewBlogPost = () => {
               value={postText1}
               onChange={postText1 => handleNewPostText1(postText1.target.value)}
             />
-            <TextField
+            <TextField required
               variant='standard'
               type='textarea'
               label='Post text (2nd)'
@@ -147,7 +155,7 @@ const AddNewBlogPost = () => {
               value={postText2}
               onChange={postText2 => handleNewPostText2(postText2.target.value)}
             />
-            <TextField
+            <TextField required
               variant='standard'
               type='textarea'
               label='Post text (3rd)'
@@ -157,7 +165,7 @@ const AddNewBlogPost = () => {
               value={postText3}
               onChange={postText3 => handleNewPostText3(postText3.target.value)}
             />
-            <TextField
+            <TextField required
               variant='outlined'
               type='submit'
               sx={{ width: 'fit-content', marginY: 2 }}
