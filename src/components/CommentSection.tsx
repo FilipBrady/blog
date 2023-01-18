@@ -11,7 +11,7 @@ const CommentSection = ({ blogPost }: Props) => {
   const { onAddComment } = useAppContainer();
   const [newName, setNewName] = useState('');
   const [newCommentText, setNewCommentText] = useState('');
-  const [isAnonymus, setIsAnonymus] = useState(false);
+  const [isAnonymous, setIsAnonymous] = useState(false);
   const handleNewName = (newName: string) => {
     setNewName(newName);
   };
@@ -36,12 +36,11 @@ const CommentSection = ({ blogPost }: Props) => {
   const handleChange = (click: any) => {
     // console.log(click.target.checked);
     if (click.target.checked === true) {
-      setIsAnonymus(true);
+      setIsAnonymous(true);
     } else {
-      setIsAnonymus(false);
+      setIsAnonymous(false);
     }
   };
-  console.log(isAnonymus);
 
   return (
     <Box
@@ -84,7 +83,7 @@ const CommentSection = ({ blogPost }: Props) => {
         }}
       >
         <Typography variant='body1'>Add Comment</Typography>
-        {!isAnonymus ? (
+        {!isAnonymous ? (
           <TextField
             variant='standard'
             type='text'
@@ -97,7 +96,7 @@ const CommentSection = ({ blogPost }: Props) => {
             variant='standard'
             type='text'
             label='Your Name'
-            value={'Anonymus'}
+            value={'Anonymous'}
             onChange={newName => handleNewName(newName.target.value)}
           />
         )}
@@ -107,10 +106,10 @@ const CommentSection = ({ blogPost }: Props) => {
               sx={{ padding: 0, marginY: 2, paddingRight: 1 }}
               onChange={click => {
                 handleChange(click);
-                setNewName('Anonymus');
+                setNewName('Anonymous');
               }}
             />
-            Post as Anonym
+            Post anonymously
           </label>
         </Box>
         <TextField
@@ -129,7 +128,8 @@ const CommentSection = ({ blogPost }: Props) => {
           sx={{ width: 'fit-content', margin: 'auto', marginY: 2 }}
           onClick={() => {
             handleSubmitClick();
-            setIsAnonymus(false);
+            setIsAnonymous(false);
+            setNewName("")
           }}
         >
           Submit Comment
