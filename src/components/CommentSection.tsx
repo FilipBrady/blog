@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Box, Button, Checkbox, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { BlogPostType } from './BlogPostType';
 import { useAppContainer } from './Context';
@@ -11,6 +11,7 @@ const CommentSection = ({ blogPost }: Props) => {
   const { onAddComment } = useAppContainer();
   const [newName, setNewName] = useState('');
   const [newCommentText, setNewCommentText] = useState('');
+  const [isAnonymus, setIsAnonymus] = useState(false);
   const handleNewName = (newName: string) => {
     setNewName(newName);
   };
@@ -32,6 +33,16 @@ const CommentSection = ({ blogPost }: Props) => {
     }
   };
 
+  const handleChange = (click: any) => {
+    // console.log(click.target.checked);
+    if (click.target.checked === true) {
+      setIsAnonymus(true);
+    } else {
+      setIsAnonymus(false);
+    }
+  };
+  console.log(isAnonymus);
+
   return (
     <Box
       sx={{
@@ -39,7 +50,7 @@ const CommentSection = ({ blogPost }: Props) => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         // alignItems: 'center',
-        padding: 2
+        padding: 2,
       }}
     >
       <Box sx={{ padding: '5px 15px', textAlign: 'left' }}>
@@ -73,13 +84,35 @@ const CommentSection = ({ blogPost }: Props) => {
         }}
       >
         <Typography variant='body1'>Add Comment</Typography>
-        <TextField
-          variant='standard'
-          type='text'
-          label='Your Name'
-          value={newName}
-          onChange={newName => handleNewName(newName.target.value)}
-        />
+        {!isAnonymus ? (
+          <TextField
+            variant='standard'
+            type='text'
+            label='Your Name'
+            value={newName}
+            onChange={newName => handleNewName(newName.target.value)}
+          />
+        ) : (
+          <TextField
+            variant='standard'
+            type='text'
+            label='Your Name'
+            value={'Anonymus'}
+            onChange={newName => handleNewName(newName.target.value)}
+          />
+        )}
+        <Box sx={{ textAlign: 'left' }}>
+          <label style={{ fontSize: '14px' }}>
+            <Checkbox
+              sx={{ padding: 0, marginY: 2, paddingRight: 1 }}
+              onChange={click => {
+                handleChange(click);
+                setNewName('Anonymus');
+              }}
+            />
+            Post as Anonym
+          </label>
+        </Box>
         <TextField
           variant='standard'
           type='text'
@@ -94,7 +127,10 @@ const CommentSection = ({ blogPost }: Props) => {
         <Button
           variant='outlined'
           sx={{ width: 'fit-content', margin: 'auto', marginY: 2 }}
-          onClick={() => handleSubmitClick()}
+          onClick={() => {
+            handleSubmitClick();
+            setIsAnonymus(false);
+          }}
         >
           Submit Comment
         </Button>

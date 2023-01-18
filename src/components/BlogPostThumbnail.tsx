@@ -44,10 +44,10 @@ const BlogPostThumbnail = ({blogPost}: Props) => {
               alt={blogPost.blogPost.postPhotoDescription1}
             />
             <CardContent>
-              <Typography gutterBottom variant='h6' component='div'>
+              <Typography gutterBottom variant='h6' component='div' sx={{wordBreak: "break-word"}}>
                 {blogPost.thumbnail.ThumbHeading}
               </Typography>
-              <Typography variant='body2' color='text.secondary'>
+              <Typography variant='body2' color='text.secondary' sx={{wordBreak: "break-word"}}>
                {blogPost.thumbnail.ThumbDescription}
               </Typography>
             </CardContent>
